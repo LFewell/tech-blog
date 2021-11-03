@@ -1,42 +1,35 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Create a New Blog:</h3>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tech Blog</title>
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 
-    <form class="form new-blog-form">
-      <div class="form-group">
-        <label for="blog-name">blog title:</label>
-        <input class="form-input" type="text" id="blog-name" name="blog-name" />
-      </div>
-      <div class="form-group">
-        <label for="blog-desc">blog post:</label>
-        <textarea class="form-input" id="blog-desc" name="blog-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Post</button>
-      </div>
-    </form>
-  </div>
+<body class="flex-column min-100-vh">
+  <nav class="navbar">
+    <ul class="flex-row">
+      <li class="li-inline nav-item"><a href="/">Home</a></li>
+      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
+      <li class="li-inline nav-item"><a href="#" id="logout-link">Logout</a></li>
+    </ul>
+  </nav>
+  <header class="hero">
+    <h1 class="app-title"><a href="/dashboard">Your Dashboard</a></h1>
+  </header>
 
-  {{#if blogs.length}}
-  <div class="col-md-6 blog-list">
-    <h3>Current Blogs:</h3>
+  <main class="col-auto">
+    {{{body}}}
+  </main>
 
-    {{#each blogs as |blog|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/blog/{{blog.id}}">{{blog.name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{blog.id}}">DELETE</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
+  <footer class="footer flex-row justify-center">
+    <a href="/dashboard/new">➕ New Post</a>
+  </footer>
+</body>
+
+<script src="/js/logout.js"></script>
+
+</html>
