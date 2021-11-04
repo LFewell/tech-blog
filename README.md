@@ -16,7 +16,7 @@ This project will allow the user to write and edit posts
 # Install
 To install type npm i into your VSC terminal. Then type mysql -u root -p in the db folder and run source.schema
 # Use
-To use go to nodemon localhost 3001
+To use go to nodemon localhost 3001.  Video can be viewed here https://watch.screencastify.com/v/4Izu0r6ZtQyQy6KG9AAf
 # Credits
 
 # License
